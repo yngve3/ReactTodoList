@@ -1,13 +1,137 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #202124;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+textarea {
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  cursor: text;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  height: 30px;
+  font-size: 1.3rem;
+}
+
+textarea:focus {
+  border: none;
+  outline: none;
+}
+
+.todoItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  color: #ffffff;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.todoItem textarea {
+  height: auto;
+}
+
+.todoList {
+  margin-top: 10px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #9b9b9b;
+}
+
+.checkBox {
+  margin-right: 10px;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #9b9b9b;
+  border-radius: 10px;
+  width: 15px;
+  height: 15px;
+}
+
+.checkBox:checked {
+  background-color: #9b9b9b;
+  border: 2px solid #9b9b9b;
+}
+
+.checkBox:hover {
+  cursor: pointer;
+}
+
+.todoItemWithoutCheckBox {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+}
+
+.barrier {
+  border: 1px solid #9b9b9b;
+}
+
+.barrier.focused {
+  background-image: linear-gradient(to right, #11998e,#38ef7d);
+  height: 2px;
+  border-width: 0;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.textareaAddNewTodo {
+  position: relative;
+  margin-top: 10px;
+}
+
+.textareaAddNewTodo textarea {
+  width: 300px;
+  border-bottom: 2px solid #9b9b9b;
+  margin-top: 10px;
+}
+
+.textareaAddNewTodo label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #9b9b9b;
+  text-align: left;
+  transition: 0.2s;
+  cursor: text;
+}
+
+.textareaAddNewTodo textarea:valid,
+.textareaAddNewTodo textarea:focus {
+  ~ label {
+    color: #11998e;
+    top: -10px;
+    font-size: 1rem;
+  }
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+
+
+
